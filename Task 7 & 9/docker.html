@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head> 
+    <script src="https://kit.fontawesome.com/fab83acf1a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+   <link rel="icon" type="img/jpg" href="namepic.jpg">
+    <title>
+        Docker
+    </title>
+</head>
+<body>
+    <header>
+        <marquee> <div class="h1">Welcome to the Online Tool On Docker</div></marquee>
+      <center> <img src="https://www.techrepublic.com/a/hub/i/r/2016/10/18/831f017c-ee68-4bd6-8a5c-ab31b4d35d6d/resize/1200x/1d727d94737ac8571d079efce9a035af/dockerhero.jpg" class="docker_img"> 
+      </center>
+      
+    </header>
+
+    
+    <div class="docker_body">
+        <b><h2>Enter a Command</h2><br><form>
+      [root@localhost ~]#
+      <input id = "docker_cmd"  type="text" placeholder="Enter Command "><br>
+      <button  onclick = "rqst()"id="id2"> Execute </button><br></form>
+     <textarea class="output" id="output" style="margin: 0px; width: 1490px; height: 181px;" id="id1"></textarea>
+    </b>
+    </div>
+
+
+
+    <footer>
+        <b>Software Developed And Maintained by Shubham Tambi </b><br> <div class="f1">
+            <a href="https://www.linkedin.com/in/shubhamtambi27/" class="social"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://github.com/shubhamtambi27" class="social"><i class="fab fa-github fa-2x"></i></a>
+            <a href="https://www.blogger.com/profile/06866876827481195007" class="social"><i class="fab fa-blogger-b fa-2x"></i></a>
+        </div>
+    </footer>
+
+    <script>
+
+        function rqst(){
+        input = document.getElementById("docker_cmd").value
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://192.168.154.109/cgi-bin/docker.py?x=" + input,true);
+        xhr.send();
+        xhr.onload = function(){	
+            var output = xhr.responseText;
+            document.getElementById('id1').innerHTML = output;
+        }
+        
+        
+        
+        }
+        </script>
+</body>
