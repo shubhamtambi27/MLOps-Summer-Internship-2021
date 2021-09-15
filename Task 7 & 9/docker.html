@@ -18,39 +18,28 @@
 								        <b><h2>Enter a Command</h2><br>
 											      [root@localhost ~]#
 											      <input id = "docker_cmd"  type="text" placeholder="Enter Command "><br>
-											      <button  onclick = "rqst()"id="execut<header>
-                            <marquee> <div class="h1">Welcome to the Online Tool On Docker</div></marquee>
-                                  <center> <img src="https://www.techrepublic.com/a/hub/i/r/2016/10/18/831f017c-ee68-4bd6-8a5c-ab31b4d35d6d/resize/1200x/1d727d94737ac8571d079efce9a035af/dockerhero.jpg" class="docker_img">
-                                                </center>
-
-                                                    </header>
-                                                        <div class="docker_body">
-                                                                        <b><h2>Enter a Command</h2><br>
-                                                                                              [root@localhost ~]#
-                                                                                              <input id = "docker_cmd"  type="text" placeholder="Enter Command "><br>
-                                                                                              <button  onclick = "rqst()"id="execute"> Execute </button><br>
+											      <button  onclick = "rqst()"id="execute"> Execute </button><br>
 <pre><div id="out"></div></pre>
-                                                                                         </b>
-                                                                                             </div>
+										         </b>
+											     </div>
 
 
-                                                                                                             <script>
+													     <script>
 
-                                                                                                                             function rqst(){
-                                                                                                                                             input = document.getElementById("docker_cmd").value
+														             function rqst(){
+																             input = document.getElementById("docker_cmd").value
 
-                                                                                                                                             var xhr = new XMLHttpRequest();
-                                                                                                                                             xhr.open("GET", "http://192.168.154.109/cgi-bin/docker.py?docker_cmd="+input,true);
-                                                                                                                                             xhr.send();
+																             var xhr = new XMLHttpRequest();
+																             xhr.open("GET", "http://192.168.154.109/cgi-bin/docker.py?docker_cmd="+input,true);
+																             xhr.send();
 
-                                                                                                                                             xhr.onload = function(){
-                                                                                                                                                                 var output = xhr.responseText;
-                                                                                                                                                                 document.getElementById("out").innerHTML = output;
-                }                                                                                                                                            }
+																             xhr.onload = function(){
+																		                 var output = xhr.responseText;
+																		                 document.getElementById("out").innerHTML = output;
+		}																             }
 
 
 
 
         </script>
-
 </body>
